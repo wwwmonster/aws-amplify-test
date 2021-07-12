@@ -7,10 +7,11 @@ import BlogList from "./BlogList";
 function App() {
 
   const url1 = "http://localhost:8000/blogs/";
+  const url2 = "https://jsonplaceholder.typicode.com/todos/";
   const url3 = "http://badbook-env-1.eba-en3274ue.us-east-2.elasticbeanstalk.com/getuser";
   const [data, setData] = useState(null);
 
-  const { data: blogs, isPending, errMsg } = useFetch(url3);
+  const { data: blogs, isPending, errMsg } = useFetch(url2);
 
   console.log("======blogs=======");
   console.log(blogs);

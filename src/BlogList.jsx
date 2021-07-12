@@ -6,14 +6,15 @@ const BlogList = ({ blogs, title }) => {
 
     return (
         <div className="blog-list">
-            <h2>{title}</h2>
+
             {/* {console.log("==blogs===" + blogs)} */}
 
             {blogs.map((blog) => (
-                <div>
+                <div key={blog.id}>
+                    <h2>{blog.title}</h2>
 
-                    <h2>{blog.age}</h2>
-                    <p>Written by: {blog.name}</p>
+
+                    <p>Written by: {blog.id}</p>
 
 
                 </div>
