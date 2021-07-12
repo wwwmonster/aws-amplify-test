@@ -1,23 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from "react";
+import useFetch from './useFetch';
+import BlogList from "./BlogList";
 
 function App() {
+
+  const url1 = "http://localhost:8000/blogs/";
+  const url3 = "http://badbook-env-1.eba-en3274ue.us-east-2.elasticbeanstalk.com/getuser";
+  const [data, setData] = useState(null);
+
+  const { data: blogs, isPending, errMsg } = useFetch(url3);
+
+  console.log("======blogs=======");
+  console.log(blogs);
+  console.log("=====blogs end ========");
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> please
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          test auto build
-        </a>
-      </header>
+
+      {blogs &&
+        <BlogList blogs={blogs} title="All Blogs!" />
+      }
+
+
+      {/* 
+      {(blogs !== null) && blogs.map((blog) => (
+        <div c>
+
+          <h2>{blog.name}</h2>
+          <p>Written by: {blog.age}</p>
+
+        </div>
+      ))} */}
+      {/* {blogs.map((blog) => (
+        <div c>
+
+          <h2>{blog.name}</h2>
+          <p>Written by: {blog.age}</p>
+
+        </div>
+      ))} */}
     </div>
   );
 }
