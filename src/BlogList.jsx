@@ -11,7 +11,7 @@ const BlogList = ({ blogs, title }) => {
 
             {blogs.map((blog) => (
                 <div key={blog.id}>
-                    <h2>{blog.title}</h2>
+                    <h2><label style={{ color: 'red' }}>the title: </label>{blog.title}</h2>
 
 
                     <p>Written by: {blog.id}</p>
