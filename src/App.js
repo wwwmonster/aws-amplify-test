@@ -7,7 +7,7 @@ import BlogList from "./BlogList";
 function App() {
 
   const url1 = "http://localhost:8000/blogs/";
-  const url2 = "http://jsonplaceholder.typicode.com/todos/";
+  const url2 = "https://jsonplaceholder.typicode.com/todos/";
   const url3 = "https://badbook-env-1.eba-en3274ue.us-east-2.elasticbeanstalk.com/getuser";
   const [data, setData] = useState(null);
 
